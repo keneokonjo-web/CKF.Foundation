@@ -1,0 +1,44 @@
+{
+  "forest": {
+    "hex": "#2F4B2A",
+    "rgb": "47 / 75 / 42",
+    "cmyk_approx": "38 / 0 / 44 / 71",
+    "use": "Primary. Headlines, buttons, logo on light."
+  },
+  "deep-forest": {
+    "hex": "#1B2E19",
+    "rgb": "27 / 46 / 25",
+    "cmyk_approx": "41 / 0 / 46 / 82",
+    "use": "Dark sections, footer, logo background."
+  },
+  "sage": {
+    "hex": "#BDD5AE",
+    "rgb": "189 / 213 / 174",
+    "cmyk_approx": "11 / 0 / 18 / 16",
+    "use": "Accent on dark, soft tiles."
+  },
+  "leaf": {
+    "hex": "#6E9A58",
+    "rgb": "110 / 154 / 88",
+    "cmyk_approx": "29 / 0 / 43 / 40",
+    "use": "Small accents, rules, map highlights."
+  },
+  "mint": {
+    "hex": "#CFE6BE",
+    "rgb": "207 / 230 / 190",
+    "cmyk_approx": "10 / 0 / 17 / 10",
+    "use": "Large headline colour on forest."
+  },
+  "paper": {
+    "hex": "#F3F1F1",
+    "rgb": "243 / 241 / 241",
+    "cmyk_approx": "0 / 1 / 1 / 5",
+    "use": "Page background."
+  },
+  "ink": {
+    "hex": "#1B1C1A",
+    "rgb": "27 / 28 / 26",
+    "cmyk_approx": "4 / 0 / 7 / 89",
+    "use": "Body text."
+  }
+}
