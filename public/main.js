@@ -74,18 +74,30 @@
     run();
   }
 
-  /* dotted map */
+  /* dotted map: switches between Nigeria and Delta State and keeps looping every 3 seconds */
   var map = $('#map'), pin = $('#pin'), pillBtn = $('#pillBtn');
   var VIEWS = { nigeria: { l: '32.9%', t: '80.1%', left: false }, delta: { l: '86.4%', t: '27.1%', left: true } };
-  $$('.chips button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var v = b.getAttribute('data-view');
-      map.setAttribute('data-view', v);
-      $$('.chips button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      pin.style.left = VIEWS[v].l; pin.style.top = VIEWS[v].t;
-      pin.classList.toggle('left', VIEWS[v].left);
-    });
+  var chips = $$('.chips button'), current = 'nigeria';
+  function setView(v) {
+    current = v; map.setAttribute('data-view', v);
+    chips.forEach(function (x) { x.setAttribute('aria-pressed', x.getAttribute('data-view') === v ? 'true' : 'false'); });
+    pin.style.left = VIEWS[v].l; pin.style.top = VIEWS[v].t; pin.classList.toggle('left', VIEWS[v].left);
+  }
+  var visible = false, pausedUntil = 0, hovering = false, mw = $('.mapwrap');
+  chips.forEach(function (b) {
+    b.addEventListener('click', function () { setView(b.getAttribute('data-view')); pausedUntil = Date.now() + 9000; });
   });
+  mw.addEventListener('pointerenter', function (e) { hovering = e.pointerType === 'mouse'; }); /* touch taps must not freeze the loop on iPhone */
+  mw.addEventListener('pointerleave', function () { hovering = false; });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: 0.35 }).observe(mw);
+  } else { visible = true; }
+  if (!reduce) {
+    setInterval(function () {
+      if (!visible || hovering || document.hidden || Date.now() < pausedUntil || pin.classList.contains('open')) return;
+      setView(current === 'nigeria' ? 'delta' : 'nigeria');
+    }, 3000);
+  }
   pillBtn.addEventListener('click', function () {
     var o = pin.classList.toggle('open');
     pillBtn.setAttribute('aria-expanded', o ? 'true' : 'false');

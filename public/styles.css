@@ -102,7 +102,6 @@ h1,h2,h3,h4,p,figure,ul,ol,dl,dd{margin:0}ul,ol{padding:0;list-style:none}
 .where{padding:var(--sec) var(--pad)}
 .where .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,110px);align-items:center}
 .where h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;text-transform:uppercase;font-size:clamp(2.6rem,1rem + 4.4vw,5.6rem);line-height:.92;color:var(--forest);margin-bottom:26px}
-.where h2 i{text-transform:lowercase;font-weight:400}
 .where p{max-width:44ch;margin-bottom:14px;color:#2b2d29}
 .where .obj{margin-top:26px;border-top:1px solid var(--line)}
 .where .obj li{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
@@ -144,7 +143,7 @@ h1,h2,h3,h4,p,figure,ul,ol,dl,dd{margin:0}ul,ol{padding:0;list-style:none}
 /* ---------- join + form ---------- */
 .join{background:var(--forest);color:#EAF3E2;padding:var(--sec) var(--pad);display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,110px);align-items:center}
 .join h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;text-transform:uppercase;font-size:clamp(3rem,1rem + 6.6vw,8.4rem);line-height:.88}
-.join h2 i{text-transform:lowercase;font-weight:400;color:var(--sage)}
+.join h2 .hl{color:var(--sage)}
 .join .sub{margin-top:26px;max-width:40ch;opacity:.88}
 .form{background:var(--paper);color:var(--ink);border-radius:6px;padding:clamp(24px,3.4vw,44px);box-shadow:0 30px 70px rgba(10,22,8,.35)}
 .form h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(1.8rem,1.2rem + 1.4vw,2.5rem);line-height:1;color:var(--forest);margin-bottom:6px}
