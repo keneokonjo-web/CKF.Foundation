@@ -1,0 +1,10 @@
+{
+  "name": "ckf-foundation-concepts",
+  "private": true,
+  "scripts": { "brand": "node scripts/build-brand.cjs" },
+  "devDependencies": {
+    "@fontsource/anton": "^5.0.0", "@fontsource/archivo": "^5.0.0", "@fontsource/cormorant-garamond": "^5.0.0",
+    "@fontsource/eb-garamond": "^5.0.0", "@fontsource/hanken-grotesk": "^5.0.0", "@fontsource/inter": "^5.0.0",
+    "@fontsource/instrument-sans": "^5.0.0", "opentype.js": "^1.3.4"
+  }
+}

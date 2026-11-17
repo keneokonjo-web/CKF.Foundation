@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CKF Foundation · Concept 4 “Momentum”</title>
+<meta name="description" content="Education. Health. Opportunity. A legacy that lives on.">
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<!--
+  CONCEPT 4 · MOMENTUM
+  Base reference : KLABU (klabu.org): saturated full-bleed colour, enormous condensed uppercase words framing a central photograph, bold campaign energy.
+  Borrowed from  : ONE.org (action-first layout: marquee ticker, pledge / "join the movement" form, big numerals on black),
+                   Solvatten (yellow rounded stat cards with big black numerals, pill donate button), Hempel (mint-free restraint in the footer)
+  FONTS USED     : Anton 400 (giant display words, numerals)  ·  Archivo 400 / 500 / 700 / 800 (body, UI, sub-headings).  No other fonts.
+  LOGO           : Swallow mark in sun-yellow + condensed uppercase "CKF" wordmark (Anton)
+-->
+<link rel="stylesheet" href="shared/fonts.css">
+<link rel="stylesheet" href="shared/base.css">
+<style>
+:root{--green:#0B6B3A;--green2:#08522C;--sun:#FFD21F;--ink:#0B0B0B;--paper:#FFF8E7;--ease:cubic-bezier(.22,1,.36,1);--pad:clamp(16px,3vw,44px)}
+body{background:var(--paper);color:var(--ink);font:400 clamp(15px,.8vw + 11px,17px)/1.5 'Archivo',system-ui,sans-serif}
+.an{font-family:'Anton','Archivo Narrow',Impact,sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.005em}
+/* header */
+.hd{position:fixed;inset:0 0 auto 0;z-index:70;display:flex;justify-content:space-between;align-items:center;padding:14px var(--pad);color:#fff;mix-blend-mode:normal;transition:background .3s}
+.hd.solid{background:var(--ink);color:#fff}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:34px;height:34px;color:var(--sun)}
+.logo b{font-family:'Anton';font-weight:400;font-size:32px;letter-spacing:.04em;line-height:1}
+.logo small{font-weight:700;font-size:9px;letter-spacing:.38em;display:block;margin-top:3px}
+.hr{display:flex;align-items:center;gap:14px}
+.donate{background:var(--sun);color:var(--ink);text-decoration:none;border-radius:99px;padding:11px 24px;font-weight:800;font-size:14px;letter-spacing:.04em;text-transform:uppercase;transition:transform .35s var(--ease)}
+.donate:hover{transform:scale(1.06) rotate(-2deg)}
+.mb{background:none;border:2px solid currentColor;border-radius:99px;padding:9px 20px;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase}
+/* hero */
+.hero{position:relative;min-height:100svh;background:var(--green);color:#fff;overflow:hidden;display:grid}
+.frame{position:absolute;left:50%;top:50%;width:min(34vw,520px);aspect-ratio:3/4;transform:translate(-50%,-48%);z-index:1;overflow:hidden;border-radius:6px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.14);transition:opacity .7s,transform 1.6s var(--ease)}
+.frame img.on{opacity:1;transform:none}
+.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,transparent 55%,rgba(0,0,0,.45))}
+.frame figcaption{position:absolute;z-index:2;left:14px;top:12px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.words{position:relative;z-index:2;display:grid;grid-template-rows:1fr 1fr 1fr;padding:104px var(--pad) 56px;pointer-events:none}
+.w{font-family:'Anton';text-transform:uppercase;line-height:.84;font-size:clamp(4.2rem,1rem + 15.6vw,19rem);letter-spacing:-.005em;cursor:pointer;pointer-events:auto;width:max-content;max-width:100%;transition:color .3s}
+.w .r{display:block;overflow:hidden}.w .r span{display:block;transform:translateY(110%);animation:up 1.1s var(--ease) forwards}
+.w:nth-child(2) .r span{animation-delay:.1s}.w:nth-child(3) .r span{animation-delay:.2s}
+@keyframes up{to{transform:none}}
+.w.on{color:var(--sun)}
+.w:nth-child(1){align-self:start}.w:nth-child(2){justify-self:end;align-self:center}.w:nth-child(3){align-self:end}
+.hero .tag{position:absolute;z-index:3;left:var(--pad);bottom:20px;font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase;display:none}
+.badge{position:absolute;z-index:3;right:calc(var(--pad) + 10px);top:96px;width:120px;height:120px;border-radius:50%;background:var(--sun);color:var(--ink);display:grid;place-items:center;text-align:center;font-family:'Anton';text-transform:uppercase;font-size:17px;line-height:1;transform:rotate(12deg);text-decoration:none;animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(372deg)}}
+/* marquee */
+.mq{background:var(--ink);color:var(--sun);overflow:hidden;white-space:nowrap;padding:14px 0;border-block:2px solid var(--ink)}
+.mq div{display:inline-block;animation:mq 26s linear infinite;font-family:'Anton';text-transform:uppercase;font-size:clamp(1.6rem,1rem + 2vw,3rem);letter-spacing:.02em}
+.mq span{margin:0 .8em;color:#fff}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* statement */
+.st{padding:clamp(70px,10vw,160px) var(--pad);display:grid;grid-template-columns:.6fr 2fr;gap:30px}
+.st .lab{font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:13px;padding-top:12px}
+.st p{font-family:'Archivo';font-weight:800;font-size:clamp(1.9rem,.8rem + 3.8vw,4.8rem);line-height:1.02;letter-spacing:-.035em}
+.st mark{background:linear-gradient(transparent 58%,var(--sun) 58% 92%,transparent 92%);color:inherit;padding:0 .04em}
+/* stacked cards */
+.stack{padding:0 var(--pad) clamp(40px,6vw,100px)}
+.sc{position:sticky;top:calc(70px + var(--i)*18px);border-radius:22px;min-height:min(72vh,640px);margin-bottom:26px;padding:clamp(22px,3vw,44px);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(18px,3vw,50px);overflow:hidden;box-shadow:0 -12px 40px rgba(0,0,0,.14)}
+.sc .l{display:flex;flex-direction:column;justify-content:space-between;gap:20px}
+.sc .n{font-weight:800;font-size:14px;letter-spacing:.14em}
+.sc h2{font-family:'Anton';font-weight:400;text-transform:uppercase;font-size:clamp(3rem,1rem + 8vw,10rem);line-height:.86;letter-spacing:-.005em}
+.sc p{max-width:36ch;font-size:clamp(16px,.6vw + 13px,19px);font-weight:500}
+.sc .im{border-radius:14px;overflow:hidden;min-height:260px;position:relative}
+.sc .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sc:nth-child(1){background:var(--sun)}.sc:nth-child(2){background:#fff}.sc:nth-child(3){background:var(--ink);color:#fff}.sc:nth-child(4){background:var(--green);color:#fff}.sc:nth-child(5){background:#EAD9B0}
+/* numbers (Solvatten-style tiles on black) */
+.nums{background:var(--ink);color:#fff;padding:clamp(60px,8vw,130px) var(--pad)}
+.nums h2{font-family:'Anton';text-transform:uppercase;font-weight:400;font-size:clamp(2.6rem,1rem + 6vw,7.4rem);line-height:.9;margin-bottom:clamp(30px,5vw,64px)}
+.nums ul{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,26px)}
+.nums li{background:var(--sun);color:var(--ink);border-radius:22px;padding:clamp(22px,3vw,40px);text-align:center;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;min-height:clamp(230px,26vw,360px)}
+.nums b{font-family:'Anton';font-weight:400;font-size:clamp(4.5rem,2rem + 9vw,11rem);line-height:.9}
+.nums li span{font-weight:600;max-width:20ch}
+.nums .nt{margin-top:22px;font-size:12px;opacity:.6}
+/* join */
+.join{background:var(--green);color:#fff;padding:clamp(60px,9vw,140px) var(--pad);display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,5vw,80px);align-items:center}
+.join h2{font-family:'Anton';text-transform:uppercase;font-weight:400;font-size:clamp(3.4rem,1rem + 9.4vw,12rem);line-height:.86}
+.join h2 em{font-style:normal;color:var(--sun)}
+.card{background:#fff;color:var(--ink);border-radius:22px;padding:clamp(22px,3vw,40px);box-shadow:0 30px 70px rgba(0,0,0,.28)}
+.card h3{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;margin-bottom:6px}
+.card p{font-size:14px;opacity:.75;margin-bottom:16px}
+.card input[type=text],.card input[type=email]{width:100%;border:2px solid var(--ink);border-radius:12px;padding:13px 14px;font:inherit;margin-bottom:10px}
+.card fieldset{border:0;padding:0;margin:10px 0 16px;display:flex;flex-wrap:wrap;gap:8px}
+.card legend{font-weight:700;font-size:13px;margin-bottom:8px;padding:0}
+.card label.c{border:2px solid var(--ink);border-radius:99px;padding:7px 14px;font-weight:600;font-size:14px;cursor:pointer;transition:background .2s}
+.card label.c:has(input:checked){background:var(--ink);color:#fff}
+.card input[type=checkbox]{position:absolute;opacity:0}
+.card label.c:has(input:focus-visible){outline:3px solid var(--green);outline-offset:2px}
+.card button{width:100%;background:var(--sun);border:2px solid var(--ink);border-radius:99px;padding:15px;font-weight:800;font-size:16px;text-transform:uppercase;letter-spacing:.05em;transition:transform .3s var(--ease)}
+.card button:hover{transform:translateY(-2px)}
+/* stories */
+.stories{padding:clamp(60px,8vw,130px) var(--pad)}
+.stories h2{font-family:'Anton';text-transform:uppercase;font-weight:400;font-size:clamp(3rem,1rem + 7vw,8.4rem);line-height:.88;margin-bottom:34px}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,28px)}
+.sg a{text-decoration:none;display:block;transition:transform .5s var(--ease)}.sg a:nth-child(2){margin-top:44px}.sg a:hover{transform:rotate(-1.4deg) translateY(-6px)}
+.sg .im{aspect-ratio:4/5;border-radius:16px;overflow:hidden;background:#ddd}
+.sg img{width:100%;height:100%;object-fit:cover}
+.sg small{display:inline-block;margin:14px 0 8px;background:var(--ink);color:var(--sun);border-radius:99px;padding:3px 12px;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.sg h3{font-weight:800;font-size:clamp(1.15rem,1rem + .5vw,1.5rem);line-height:1.1;letter-spacing:-.02em}
+/* footer */
+.ft{background:var(--ink);color:#fff;padding:clamp(40px,5vw,70px) var(--pad) 0;overflow:hidden}
+.ft .row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+.ft h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--sun);margin:0 0 12px;font-weight:700}
+.ft li{margin:6px 0}.ft a{text-decoration:none}.ft a:hover{text-decoration:underline}
+.ft .sm{font-size:12.5px;opacity:.65;max-width:42ch;margin-top:14px}
+.giant{font-family:'Anton';text-transform:uppercase;font-size:clamp(9rem,36vw,40rem);line-height:.74;color:var(--green);margin:clamp(20px,4vw,60px) 0 -.12em;white-space:nowrap;text-align:center;user-select:none}
+.ft .base{position:relative;z-index:2;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;opacity:.7;padding:14px 0 20px;border-top:1px solid rgba(255,255,255,.2)}
+/* menu */
+#menu{position:fixed;inset:0;z-index:90;background:var(--sun);color:var(--ink);padding:90px var(--pad) 34px;display:flex;flex-direction:column;justify-content:center;clip-path:circle(0 at calc(100% - 60px) 40px);transition:clip-path .9s cubic-bezier(.76,0,.24,1);visibility:hidden}
+#menu.open{clip-path:circle(150% at calc(100% - 60px) 40px);visibility:visible}
+#menu a{font-family:'Anton';text-transform:uppercase;text-decoration:none;font-size:clamp(3.4rem,1rem + 9vw,9.4rem);line-height:.98;width:max-content;transition:transform .4s var(--ease),color .3s}
+#menu a:hover{transform:translateX(18px);color:var(--green)}
+#menu .x{position:absolute;top:14px;right:var(--pad);background:var(--ink);color:#fff;border:0;border-radius:99px;padding:10px 22px;font-weight:700;text-transform:uppercase;font-size:14px}
+@media (max-width:900px){
+  .frame{width:62vw;top:52%}.words{padding-top:90px}.badge{display:none}
+  .st,.join,.sc{grid-template-columns:1fr}.sc{min-height:auto;position:relative;top:auto}.sc .im{min-height:220px;aspect-ratio:16/10}
+  .nums ul,.sg,.ft .row{grid-template-columns:1fr}.sg a:nth-child(2){margin-top:0}
+}
+</style>
+</head>
+<body>
+<a class="sr" href="#main">Skip to content</a>
+<header class="hd" id="hd">
+  <a class="logo" href="#top" aria-label="CKF Foundation home"><span data-brand="bird"></span><span><b>CKF</b><small>FOUNDATION</small></span></a>
+  <div class="hr"><a class="donate" href="#join">Donate</a><button class="mb" type="button" data-menu-open aria-expanded="false" aria-controls="menu">Menu</button></div>
+</header>
+<nav id="menu" aria-hidden="true" aria-label="Full menu">
+  <button class="x" type="button" data-menu-close>Close ×</button>
+  <a href="#about">Who we are</a><a href="#work">What we do</a><a href="#stories">Stories</a><a href="#join">Join in</a>
+</nav>
+
+<main id="main">
+<section class="hero" id="top" aria-label="Education. Health. Opportunity.">
+  <figure class="frame" aria-hidden="true" id="frame"></figure>
+  <div class="words" id="words">
+    <div class="w on" data-i="0"><span class="r"><span>Education</span></span></div>
+    <div class="w" data-i="1"><span class="r"><span>Health</span></span></div>
+    <div class="w" data-i="2"><span class="r"><span>Opportunity</span></span></div>
+  </div>
+  <a class="badge" href="#about" aria-label="A legacy that lives on, read more">A legacy that lives on</a>
+</section>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<section class="st" id="about">
+  <span class="lab">Who we are</span>
+  <p data-reveal>Carrying our parents’ legacy forward by investing in <mark>education</mark>, <mark>health</mark>, and <mark>opportunity</mark> for the people of Ogwashi-Ukwu and beyond.</p>
+</section>
+
+<section class="stack" id="work" aria-label="What we do"><div id="cards"></div></section>
+
+<section class="nums" aria-label="At a glance">
+  <h2 data-reveal>Built on<br>three pillars</h2>
+  <ul id="nums"></ul>
+  <p class="nt">Structural facts only. Verified impact numbers will be added when CKF provides them.</p>
+</section>
+
+<section class="join" id="join">
+  <h2 data-reveal>Join the <em>movement</em></h2>
+  <form class="card" onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you (demo)'">
+    <h3>Be part of the legacy</h3><p>Tell us how you’d like to help. We’ll be in touch with next steps.</p>
+    <label class="sr" for="nm">Name</label><input id="nm" type="text" placeholder="Your name" autocomplete="name" required>
+    <label class="sr" for="em">Email</label><input id="em" type="email" placeholder="Email address" autocomplete="email" required>
+    <fieldset><legend>I’d like to</legend>
+      <label class="c"><input type="checkbox">Give</label><label class="c"><input type="checkbox">Volunteer</label><label class="c"><input type="checkbox">Partner</label><label class="c"><input type="checkbox">Hear about scholarships</label>
+    </fieldset>
+    <button type="submit">Count me in</button>
+  </form>
+</section>
+
+<section class="stories" id="stories">
+  <h2 data-reveal>Stories</h2>
+  <div class="sg" id="sg"></div>
+</section>
+</main>
+
+<footer class="ft">
+  <div class="row">
+    <div><a class="logo" href="#top"><span data-brand="bird"></span><span><b>CKF</b><small>FOUNDATION</small></span></a><p class="sm" id="full"></p></div>
+    <div><h4>Explore</h4><ul><li><a href="#about">Who we are</a></li><li><a href="#work">What we do</a></li><li><a href="#stories">Stories</a></li></ul></div>
+    <div><h4>Get involved</h4><ul><li><a href="#join">Donate</a></li><li><a href="#join">Volunteer</a></li><li><a href="#join">Partner</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>Ogwashi-Ukwu, Delta State</li><li>Nigeria</li><li><a href="#">hello@ckf.example</a></li></ul></div>
+  </div>
+  <div class="giant" aria-hidden="true">CKF</div>
+  <div class="base"><span>© CKF Foundation. Concept design, not a live site.</span><span>Photos: illustrative stock (Unsplash).</span></div>
+</footer>
+
+<script>
+window.CKF_NOTES={
+  name:'Concept 4 · Momentum',
+  base:'KLABU (klabu.org): saturated full-bleed colour, enormous condensed uppercase words framing a central photograph, campaign-style energy.',
+  borrowed:[['ONE.org','action-first structure: a ticker, a pledge form (“Join the movement”), big black section with oversized numbers.'],['Solvatten','rounded sun-yellow stat tiles and a pill Donate button.'],['Playbook technique','sticky stacking cards for the five programmes.'],['Own twist','Nigerian-flag-inspired green and a rotating word-to-photo hero that changes the picture as you hover or wait.']],
+  fonts:[['Anton','400: giant display words, numerals, menu'],['Archivo','400 / 500 / 700 / 800: body, buttons, bold statements']],
+  colors:[['Green','#0B6B3A'],['Sun yellow','#FFD21F'],['Ink','#0B0B0B'],['Paper','#FFF8E7']],
+  logo:'The swallow mark in sun-yellow with a condensed Anton CKF wordmark.'
+};
+</script>
+<script src="shared/data.js"></script>
+<script src="shared/common.js"></script>
+<script>
+(function(){
+  var D=window.CKF,$=function(i){return document.getElementById(i)};
+  $('full').textContent=D.fullName+'.';
+  // hero words <-> frame images
+  var keys=['kids-smiling','nurse-clinic','man-portrait'],caps=['Education','Health','Opportunity'],fr=$('frame');
+  fr.innerHTML=keys.map(function(k,i){return '<img src="'+D.img(k)+'" alt=""'+(i?' loading="lazy"':' data-eager')+(i===0?' class="on"':'')+'>'}).join('')+'<figcaption id="cap">Education · illustrative photo</figcaption>';
+  var imgs=fr.querySelectorAll('img'),ws=document.querySelectorAll('.w'),cur=0,timer;
+  function set(i){cur=i;imgs.forEach(function(m,j){m.classList.toggle('on',j===i)});ws.forEach(function(w,j){w.classList.toggle('on',j===i)});$('cap').textContent=caps[i]+' · illustrative photo'}
+  function loop(){clearInterval(timer);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(function(){set((cur+1)%3)},3200)}
+  ws.forEach(function(w,i){w.addEventListener('mouseenter',function(){set(i);clearInterval(timer)});w.addEventListener('mouseleave',loop);w.addEventListener('click',function(){set(i);loop()})});loop();
+  // marquee
+  var t='<span>★</span>Education<span>★</span>Health<span>★</span>Opportunity<span>★</span>A legacy that lives on';var m='';for(var i=0;i<8;i++)m+=t;$('mq').innerHTML=m+'<span>★</span>';
+  // stacked cards
+  var tint=['Education','Opportunity','Health','Community','Opportunity'];
+  $('cards').innerHTML=D.programmes.map(function(p,i){return '<article class="sc" style="--i:'+i+'"><div class="l"><span class="n">0'+(i+1)+' / 05 · '+tint[i]+'</span><div><h2>'+p.title.replace(' & ',' &amp; ')+'</h2></div><p>'+p.text+'</p></div><div class="im"><img src="'+D.img(p.img)+'" alt="" loading="lazy"></div></article>'}).join('');
+  // nums + stories
+  $('nums').innerHTML=D.facts.map(function(f,i){return '<li data-reveal style="--d:'+i*120+'"><b data-count="'+f.v+'">0</b><span>'+f.label+'</span></li>'}).join('');
+  $('sg').innerHTML=D.stories.map(function(s,i){return '<a href="#" data-reveal style="--d:'+i*110+'"><div class="im"><img src="'+D.img(s.img)+'" alt="" loading="lazy"></div><small>'+s.tag+' · Sample</small><h3>'+s.title.replace(/^Sample story: (.)/,function(m,c){return c.toUpperCase()})+'</h3></a>'}).join('');
+  var hd=$('hd');function sc(){hd.classList.toggle('solid',scrollY>innerHeight*.8)}addEventListener('scroll',sc,{passive:true});sc();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CKF Foundation · Concept 2 “Roots”</title>
+<meta name="description" content="Education. Health. Opportunity. A legacy that lives on.">
+<link rel="icon" href="../assets/brand/favicon.svg" type="image/svg+xml">
+<!--
+  CONCEPT 2 · ROOTS
+  Base reference : The Martin Family Initiative (themfi.ca): cream paper, navy ink, uppercase serif headings with a small italic connector word,
+                   floating pill nav over a hero photograph, coral side bar, three hairline-divided pillar columns, tabbed horizontally staggered cards.
+  Borrowed from  : ONE.org (a persistent "take action" bar), Solvatten (warm accent used on the donate button), Velux Fonden (quiet line detailing)
+  FONTS USED     : Cormorant Garamond 400 / 500 / 600 / 500 italic (display, numerals, quotes)  ·  Inter 400 / 500 / 600 (body and UI).  No other fonts.
+  LOGO           : Three-pillar arch mark + CKF / FOUNDATION wordmark in Cormorant Garamond
+-->
+<link rel="stylesheet" href="shared/fonts.css">
+<link rel="stylesheet" href="shared/base.css">
+<style>
+:root{--cream:#F7F5E8;--navy:#01284F;--navy2:#0A3A6B;--coral:#FF5A3C;--sand:#EDE9D4;--line:rgba(1,40,79,.18);--ease:cubic-bezier(.22,1,.36,1);--pad:clamp(20px,4vw,64px)}
+body{font-variant-numeric:lining-nums;background:var(--cream);color:var(--navy);font:400 clamp(15px,.9vw + 11px,17px)/1.6 'Inter',system-ui,sans-serif}
+.serif{font-family:'Cormorant Garamond',Georgia,serif}
+/* header */
+.hd{position:absolute;inset:0 0 auto 0;z-index:60;display:flex;justify-content:space-between;align-items:center;padding:18px var(--pad);pointer-events:none}
+.hd>*{pointer-events:auto}.hd>div{position:fixed;right:var(--pad);top:18px;z-index:60}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;transition:color .4s}
+.logo svg{width:40px;height:44px}
+.logo span{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:.9}
+.logo b{display:block;font-size:30px;letter-spacing:.08em}.logo small{display:block;font-size:10.5px;letter-spacing:.42em;margin-top:5px}
+.hd.dark .logo{color:var(--navy)}
+.pill{display:flex;align-items:center;gap:4px;background:rgba(1,40,79,.82);backdrop-filter:blur(10px);border-radius:99px;padding:6px 6px 6px 22px;color:#fff;font-size:14px}
+.pill a{text-decoration:none;padding:8px 14px;border-radius:99px;transition:background .3s}
+.pill a:hover{background:rgba(255,255,255,.14)}
+.pill .give{background:var(--coral);color:#fff;font-weight:600;margin-left:6px;padding:9px 20px}
+.pill .give:hover{background:#ff7459}
+.mbtn{display:none;background:var(--navy);color:#fff;border:0;border-radius:99px;padding:11px 22px;font-weight:500}
+/* hero */
+.hero{position:relative;height:min(100svh,980px);min-height:620px;background:var(--navy);overflow:hidden;color:var(--cream)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;transform:scale(1.08);animation:zoom 14s var(--ease) forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,40,79,.88) 0%,rgba(1,40,79,.55) 42%,rgba(1,40,79,.05) 78%),linear-gradient(0deg,rgba(1,40,79,.55),transparent 40%)}
+.hero .in{position:absolute;z-index:2;left:var(--pad);bottom:clamp(60px,9vh,120px);max-width:min(820px,92vw)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:500;text-transform:uppercase;font-size:clamp(3.2rem,1rem + 8.6vw,9.6rem);line-height:.88;letter-spacing:-.005em}
+.hero h1 i{font-style:italic;text-transform:lowercase;font-weight:400;font-size:.62em;margin:0 .1em 0 .04em;display:inline-block;transform:translateY(-.1em)}
+.hero h1 .l{display:block;overflow:hidden;padding-bottom:.06em}.hero h1 .l>span{display:block;transform:translateY(108%);animation:up 1.2s var(--ease) forwards}
+.hero h1 .l:nth-child(2)>span{animation-delay:.12s}.hero h1 .l:nth-child(3)>span{animation-delay:.24s}
+@keyframes up{to{transform:none}}
+.cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:clamp(22px,3vw,40px);opacity:0;animation:fade 1s .9s forwards}
+@keyframes fade{to{opacity:1}}
+.pbtn{display:inline-flex;align-items:center;gap:12px;background:var(--cream);color:var(--navy);text-decoration:none;border-radius:99px;padding:13px 24px;font-weight:500;font-size:15px;transition:transform .4s var(--ease),background .3s}
+.pbtn:hover{transform:translateY(-2px)}.pbtn.coral{background:var(--coral);color:#fff}
+.chev{letter-spacing:-.18em;font-size:12px}
+/* intro strip */
+.strip{display:grid;grid-template-columns:30px 90px 1fr;background:var(--cream);border-bottom:1px solid var(--line)}
+.strip .bar{background:var(--coral)}
+.strip .arr{display:grid;border-right:1px solid var(--line)}
+.strip .arr button{background:none;border:0;border-bottom:1px solid var(--line);font-size:22px;color:var(--navy);opacity:.6;transition:opacity .3s}
+.strip .arr button:last-child{border:0}.strip .arr button:hover{opacity:1}
+.strip .txt{padding:clamp(30px,4vw,56px) var(--pad) clamp(30px,4vw,56px) clamp(20px,5vw,80px);min-height:170px;display:flex;flex-direction:column;justify-content:center}
+.strip small{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--coral);font-weight:600;margin-bottom:10px;display:block}
+.strip p{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.5rem,.8rem + 2.1vw,2.7rem);line-height:1.12;max-width:30em;transition:opacity .4s}
+/* pillars */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr)}
+.pil{border-right:1px solid var(--line);display:flex;flex-direction:column;text-align:center}
+.pil:last-child{border:0}
+.pil .ph{aspect-ratio:4/5;overflow:hidden;background:var(--sand)}
+.pil .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease)}
+.pil:hover .ph img{transform:scale(1.05)}
+.pil h2{font-family:'Cormorant Garamond',serif;font-weight:500;text-transform:uppercase;font-size:clamp(2rem,1rem + 2.4vw,3.4rem);line-height:.95;margin:30px 16px 14px}
+.pil .go{align-self:center;display:inline-flex;background:#fff;border-radius:99px;padding:7px 20px;font-size:13px;color:var(--navy);text-decoration:none;border:1px solid var(--line);transition:background .3s,color .3s}
+.pil .go:hover{background:var(--navy);color:#fff}
+.pil p.l{font-family:'Cormorant Garamond',serif;font-size:clamp(1.25rem,1rem + .9vw,1.7rem);line-height:1.2;margin:20px auto 30px;max-width:19em;padding:0 14px}
+.pil ul{margin-top:auto;border-top:1px solid var(--line)}
+.pil li{border-bottom:1px solid var(--line);padding:12px 10px;font-size:14px}.pil li:last-child{border-bottom:0}
+/* coral duotone photo */
+.duo{position:relative;min-height:clamp(420px,62vw,780px);overflow:hidden;color:var(--cream);display:flex;align-items:flex-end}
+.duo img{position:absolute;inset:-9% 0;width:100%;height:118%;object-fit:cover;filter:grayscale(1) contrast(1.05)}
+.duo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,90,60,.55),rgba(1,40,79,.85));mix-blend-mode:multiply;z-index:1}
+.duo::after{content:"";position:absolute;left:0;top:0;bottom:0;width:clamp(14px,2vw,30px);background:var(--coral);z-index:3}
+.duo .q{position:relative;z-index:2;padding:var(--pad);padding-left:calc(var(--pad) + 20px);max-width:1200px}
+.duo h2{font-family:'Cormorant Garamond',serif;font-weight:500;text-transform:uppercase;font-size:clamp(2.4rem,1rem + 5.6vw,6.6rem);line-height:.92}
+.duo h2 i{font-weight:400;text-transform:lowercase;font-size:.7em}
+.duo p{margin-top:20px;max-width:46ch;opacity:.92}
+/* tabs */
+.work{padding:clamp(60px,8vw,120px) 0 clamp(60px,8vw,120px);overflow:hidden}
+.tabs{display:flex;justify-content:center;align-items:center;gap:clamp(24px,6vw,100px);margin-bottom:clamp(40px,6vw,90px)}
+.tabs button{background:none;border:0;font-family:'Cormorant Garamond',serif;text-transform:uppercase;font-size:clamp(1.4rem,1rem + 1.4vw,2.3rem);color:rgba(1,40,79,.4);padding:4px 0;border-bottom:2px solid transparent;transition:color .3s}
+.tabs button[aria-selected=true]{color:var(--navy);border-color:var(--navy)}
+.tabs .mk{width:56px;color:var(--navy);opacity:.35}
+.track{scroll-padding-left:var(--pad);display:flex;gap:clamp(18px,2.4vw,36px);overflow-x:auto;scroll-snap-type:x mandatory;padding:60px var(--pad) 30px;scrollbar-width:none;cursor:grab}
+.track::-webkit-scrollbar{display:none}.track.drag{cursor:grabbing;scroll-snap-type:none}
+.cd{flex:0 0 clamp(250px,26vw,380px);scroll-snap-align:start}
+.cd:nth-child(odd){margin-top:60px}.cd:nth-child(3n){margin-top:20px}
+.cd .im{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--sand)}
+.cd img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cd h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.5rem,1.1rem + 1vw,2rem);margin:16px 0 8px;line-height:1.05}
+.cd p{font-size:14.5px;opacity:.85;max-width:34ch}
+.panel[hidden]{display:none}
+.where{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,80px);padding:0 var(--pad);align-items:center}
+.where .im{aspect-ratio:5/4;border-radius:12px;overflow:hidden}.where img{width:100%;height:100%;object-fit:cover}
+.where h3{font-family:'Cormorant Garamond',serif;font-weight:500;text-transform:uppercase;font-size:clamp(2.2rem,1rem + 3.4vw,4.4rem);line-height:.95;margin-bottom:18px}
+.where p{max-width:42ch;margin-bottom:12px}
+/* stats */
+.stats{background:var(--sand);padding:clamp(60px,9vw,140px) var(--pad);position:relative;overflow:hidden}
+.stats ul{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:center}
+.stats b{display:block;font-variant-numeric:lining-nums;padding-bottom:.08em;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(5rem,2rem + 12vw,14rem);line-height:.82;color:var(--navy)}
+.stats li{font-family:'Cormorant Garamond',serif;font-size:clamp(1.15rem,1rem + .7vw,1.6rem);line-height:1.15;max-width:12em;margin:0 auto}
+.stats li span{display:block;margin-top:16px}
+.stats .nt{text-align:center;font-size:12px;opacity:.65;margin-top:44px}
+/* mission */
+.mv{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,6vw,100px);padding:clamp(60px,9vw,130px) var(--pad)}
+.mv h2{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--coral);font-weight:600;margin-bottom:18px}
+.mv p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,1rem + 1.1vw,2rem);line-height:1.22}
+/* stories */
+.news{padding:0 var(--pad) clamp(60px,9vw,130px)}
+.news h2{font-family:'Cormorant Garamond',serif;font-weight:500;text-transform:uppercase;font-size:clamp(2.4rem,1rem + 4vw,5rem);line-height:.95;margin-bottom:36px}
+.nl{border-top:1px solid var(--line)}
+.nl a{display:grid;grid-template-columns:150px 1fr auto;gap:clamp(14px,3vw,40px);align-items:center;padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none;transition:padding .5s var(--ease),background .3s}
+.nl a:hover{padding-left:14px;background:rgba(1,40,79,.04)}
+.nl img{width:150px;aspect-ratio:4/3;object-fit:cover;border-radius:8px}
+.nl small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);font-weight:600;display:block;margin-bottom:6px}
+.nl h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(1.4rem,1rem + 1.2vw,2.1rem);line-height:1.08}
+.nl em{font-style:normal;font-size:12px;border:1px solid var(--line);border-radius:99px;padding:3px 12px}
+/* join / footer */
+.join{background:var(--navy);color:var(--cream);padding:clamp(70px,10vw,150px) var(--pad);display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(30px,6vw,100px);align-items:end}
+.join h2{font-family:'Cormorant Garamond',serif;font-weight:500;text-transform:uppercase;font-size:clamp(2.8rem,1rem + 6.4vw,8rem);line-height:.9}
+.join h2 i{text-transform:lowercase;font-weight:400}
+.join form{display:grid;gap:12px}.join label{font-size:13px;opacity:.8}
+.join input{background:transparent;border:0;border-bottom:1px solid rgba(247,245,232,.5);color:inherit;padding:12px 2px;font:inherit}
+.join input::placeholder{color:rgba(247,245,232,.55)}
+.ft{background:var(--navy);color:var(--cream);padding:0 var(--pad) 28px}
+.ft .row{border-top:1px solid rgba(247,245,232,.2);padding-top:36px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px}
+.ft h4{font-size:11px;letter-spacing:.24em;text-transform:uppercase;opacity:.65;margin:0 0 12px;font-weight:600}
+.ft li{margin:6px 0}.ft a{text-decoration:none;font-size:15px}.ft a:hover{text-decoration:underline}
+.ft .logo{color:var(--cream)}.ft .sm{font-size:12px;opacity:.65;max-width:44ch;margin-top:16px}
+.ft .base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;opacity:.65;margin-top:40px}
+/* action bar */
+.act{position:fixed;left:50%;bottom:18px;z-index:55;transform:translate(-50%,140%);background:var(--navy);color:#fff;border-radius:99px;display:flex;align-items:center;gap:6px;padding:7px;box-shadow:0 12px 40px rgba(1,40,79,.35);transition:transform .7s var(--ease)}
+.act.on{transform:translate(-50%,0)}
+.act span{padding:0 14px 0 18px;font-size:14px;white-space:nowrap}
+.act a{text-decoration:none;border-radius:99px;padding:10px 20px;font-size:14px;font-weight:500;background:rgba(255,255,255,.12);transition:background .3s}
+.act a:hover{background:rgba(255,255,255,.24)}.act a.c{background:var(--coral)}
+/* menu */
+#menu{position:fixed;inset:0;z-index:80;background:var(--navy);color:var(--cream);padding:90px var(--pad) 40px;display:flex;flex-direction:column;justify-content:center;transform:translateY(-102%);transition:transform .8s cubic-bezier(.76,0,.24,1);visibility:hidden}
+#menu.open{transform:none;visibility:visible}
+#menu a{font-family:'Cormorant Garamond',serif;font-size:clamp(2.6rem,1rem + 7vw,5.5rem);text-transform:uppercase;text-decoration:none;line-height:1.05}
+#menu .x{position:absolute;top:22px;right:var(--pad);background:none;border:1px solid rgba(247,245,232,.5);border-radius:99px;padding:9px 20px;color:inherit}
+@media (max-width:1000px){
+  .pill a:not(.give){display:none}.pill{padding:5px}.mbtn{display:block;margin-left:8px}
+  .pillars{grid-template-columns:1fr}.pil{border-right:0;border-bottom:1px solid var(--line);padding-bottom:0}.pil .ph{aspect-ratio:16/10}
+  .stats ul{grid-template-columns:1fr;gap:50px}.mv,.join,.where{grid-template-columns:1fr}.ft .row{grid-template-columns:1fr 1fr}
+  .strip{grid-template-columns:14px 56px 1fr}.nl a{grid-template-columns:96px 1fr}.nl img{width:96px}.nl em{display:none}
+  .act span{display:none}.hero img{object-position:62% 30%}
+}
+@media (max-width:560px){.logo small{letter-spacing:.3em}.ft .row{grid-template-columns:1fr}.tabs .mk{display:none}.cd:nth-child(n){margin-top:0}}
+</style>
+</head>
+<body>
+<a class="sr" href="#main">Skip to content</a>
+<header class="hd" id="hd">
+  <a class="logo" href="#top" aria-label="CKF Foundation home"><span data-brand="pillars"></span><span><b>CKF</b><small>FOUNDATION</small></span></a>
+  <div style="display:flex;align-items:center">
+    <nav class="pill" aria-label="Primary"><a href="#who">About</a><a href="#work">Our work</a><a href="#stories">Stories</a><a href="#join">Contact</a><a class="give" href="#join">Give</a>
+      <button class="mbtn" type="button" data-menu-open aria-expanded="false" aria-controls="menu">Menu</button></nav>
+  </div>
+</header>
+<nav id="menu" aria-hidden="true" aria-label="Full menu">
+  <button class="x" type="button" data-menu-close>Close</button>
+  <a href="#who">About</a><a href="#work">Our work</a><a href="#stories">Stories</a><a href="#join">Give</a>
+</nav>
+
+<main id="main">
+<section class="hero" id="top">
+  <img src="../assets/img/kids-smiling.jpg" alt="Smiling children, illustrative stock photograph" data-eager>
+  <div class="in">
+    <h1 aria-label="A legacy that lives on"><span class="l"><span>A legacy</span></span><span class="l"><span><i>that</i> lives on</span></span></h1>
+    <div class="cta"><a class="pbtn" href="#work">How we do it <span class="chev">&gt;&gt;&gt;</span></a><a class="pbtn coral" href="#join">Give now</a></div>
+  </div>
+</section>
+
+<section class="strip" id="who" aria-label="About CKF">
+  <div class="bar"></div>
+  <div class="arr"><button type="button" id="prev" aria-label="Previous statement">‹</button><button type="button" id="next" aria-label="Next statement">›</button></div>
+  <div class="txt"><small id="sLabel">Mission</small><p id="sText" aria-live="polite"></p></div>
+</section>
+
+<section class="pillars" aria-label="Our three pillars" id="pillars"></section>
+
+<section class="duo" aria-label="Our promise">
+  <img data-parallax=".1" src="../assets/img/volunteers-boxes.jpg" alt="" loading="lazy">
+  <div class="q"><h2 data-reveal>Every child. <br>Every family. <br>Every young <i>person.</i></h2><p data-reveal style="--d:150">A legacy of education, service and community, carried forward for the people of Ogwashi-Ukwu and beyond.</p></div>
+</section>
+
+<section class="work" id="work">
+  <div class="tabs" role="tablist" aria-label="Our work">
+    <button role="tab" id="t1" aria-selected="true" aria-controls="p1">What we do</button>
+    <span class="mk" data-brand="pillars"></span>
+    <button role="tab" id="t2" aria-selected="false" aria-controls="p2">Where we work</button>
+  </div>
+  <div class="panel" id="p1" role="tabpanel" aria-labelledby="t1"><div class="track" id="track"></div></div>
+  <div class="panel where" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+    <div class="im"><img src="../assets/img/lagos-skyline.jpg" alt="Illustrative view of a Nigerian city" loading="lazy"></div>
+    <div><h3>Ogwashi-Ukwu <br>and beyond</h3><p>Our home community is Ogwashi-Ukwu in Delta State, Nigeria. Our work starts there and reaches outward to the people of Nigeria who are held back by poverty.</p><p>Healthy, educated, thriving communities where no one is held back by poverty.</p></div>
+  </div>
+</section>
+
+<section class="stats" aria-label="At a glance"><ul id="facts"></ul><p class="nt">Structural facts only. Verified impact numbers will replace this band once CKF provides them.</p></section>
+
+<section class="mv"><div data-reveal><h2>Our mission</h2><p id="mission"></p></div><div data-reveal style="--d:140"><h2>Our vision</h2><p id="vision"></p></div></section>
+
+<section class="news" id="stories"><h2 data-reveal>Stories</h2><div class="nl" id="nl"></div></section>
+
+<section class="join" id="join">
+  <h2 data-reveal>Help it <i>live</i> on</h2>
+  <form onsubmit="event.preventDefault();this.querySelector('button').textContent='Thank you (demo)'">
+    <label for="em">Stay in touch with CKF</label>
+    <input id="em" type="email" required placeholder="Email address" autocomplete="email">
+    <button class="pbtn coral" type="submit" style="justify-self:start;border:0">Subscribe <span class="chev">&gt;&gt;&gt;</span></button>
+  </form>
+</section>
+</main>
+
+<footer class="ft">
+  <div class="row">
+    <div><a class="logo" href="#top"><span data-brand="pillars"></span><span><b>CKF</b><small>FOUNDATION</small></span></a><p class="sm" id="full"></p></div>
+    <div><h4>Explore</h4><ul><li><a href="#who">About</a></li><li><a href="#work">Our work</a></li><li><a href="#stories">Stories</a></li></ul></div>
+    <div><h4>Get involved</h4><ul><li><a href="#join">Give</a></li><li><a href="#join">Volunteer</a></li><li><a href="#join">Partner</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li>Ogwashi-Ukwu, Delta State</li><li>Nigeria</li><li><a href="#">hello@ckf.example</a></li></ul></div>
+  </div>
+  <div class="base"><span>© CKF Foundation. Concept design, not a live site.</span><span>Photos: illustrative stock (Unsplash).</span></div>
+</footer>
+
+<div class="act" id="act" role="region" aria-label="Take action"><span>Take action</span><a class="c" href="#join">Give</a><a href="#join">Volunteer</a><a href="#join">Partner</a></div>
+
+<script>
+window.CKF_NOTES={
+  name:'Concept 2 · Roots',
+  base:'The Martin Family Initiative (themfi.ca): cream paper, navy ink, uppercase serif headings with a tiny italic connector, floating pill navigation, coral side bar, three hairline-divided pillar columns, a tabbed staggered card carousel.',
+  borrowed:[['ONE.org','a persistent “take action” bar that slides in after the hero.'],['Solvatten','a warm accent (coral) reserved for the giving button.'],['Velux Fonden','quiet hairlines and generous whitespace.'],['Own twist','duotone coral-to-navy photo band, rotating mission / vision / tagline strip, and “Where we work” tab.']],
+  fonts:[['Cormorant Garamond','400 / 500 / 600 and 500 italic: uppercase display headings, big numerals, quotes, wordmark'],['Inter','400 / 500 / 600: body copy, buttons, labels']],
+  colors:[['Cream','#F7F5E8'],['Navy','#01284F'],['Coral','#FF5A3C'],['Sand','#EDE9D4']],
+  logo:'The three-pillar arch mark with a Cormorant Garamond CKF / FOUNDATION wordmark.'
+};
+</script>
+<script src="shared/data.js"></script>
+<script src="shared/common.js"></script>
+<script>
+(function(){
+  var D=window.CKF,$=function(i){return document.getElementById(i)};
+  $('mission').textContent=D.mission;$('vision').textContent=D.vision;$('full').textContent=D.fullName+'.';
+  // pillars
+  $('pillars').innerHTML=D.pillars.map(function(p,i){
+    var list=D.programmes.filter(function(x){return x.pillar===p.id||(p.id==='opportunity'&&false)}).map(function(x){return '<li>'+x.title+'</li>'}).join('');
+    if(p.id==='education')list='<li>Scholarships &amp; student support</li><li>Technology &amp; skills training</li>';
+    if(p.id==='health')list='<li>Primary health care</li><li>Community welfare &amp; cleanups</li>';
+    if(p.id==='opportunity')list='<li>Small business backing</li><li>Jobs for young people</li>';
+    return '<article class="pil" data-reveal style="--d:'+i*120+'"><div class="ph"><img src="'+D.img(p.img)+'" alt="" loading="lazy"></div><h2>'+p.title+'</h2><a class="go" href="#work"><span class="chev">&gt;&gt;&gt;</span></a><p class="l">'+p.line+'</p><ul>'+list+'</ul></article>'}).join('');
+  // rotating strip
+  var items=[['Mission',D.missionShort],['Vision',D.visionShort],['Our promise',D.tagline]],k=0,sT=$('sText'),sL=$('sLabel');
+  function show(n){k=(n+items.length)%items.length;sT.style.opacity=0;setTimeout(function(){sL.textContent=items[k][0];sT.textContent=items[k][1];sT.style.opacity=1},220)}
+  sT.textContent=items[0][1];$('prev').onclick=function(){show(k-1)};$('next').onclick=function(){show(k+1)};
+  // cards
+  $('track').innerHTML=D.programmes.map(function(p){return '<article class="cd"><div class="im"><img src="'+D.img(p.img)+'" alt="" loading="lazy" draggable="false"></div><h3>'+p.title+'</h3><p>'+p.text+'</p></article>'}).join('');
+  var tr=$('track'),down=false,sx=0,sl=0;
+  tr.addEventListener('pointerdown',function(e){if(e.pointerType==='touch')return;down=true;sx=e.clientX;sl=tr.scrollLeft;tr.classList.add('drag')});
+  addEventListener('pointerup',function(){down=false;tr.classList.remove('drag')});
+  addEventListener('pointermove',function(e){if(down)tr.scrollLeft=sl-(e.clientX-sx)});
+  // tabs
+  [['t1','p1'],['t2','p2']].forEach(function(t){$(t[0]).onclick=function(){[['t1','p1'],['t2','p2']].forEach(function(u){var on=u[0]===t[0];$(u[0]).setAttribute('aria-selected',on);$(u[1]).hidden=!on})}});
+  // facts
+  $('facts').innerHTML=D.facts.map(function(f,i){return '<li data-reveal style="--d:'+i*130+'"><b data-count="'+f.v+'">0</b><span>'+f.label+'</span></li>'}).join('');
+  // stories
+  $('nl').innerHTML=D.stories.map(function(s){return '<a href="#"><img src="'+D.img(s.img)+'" alt="" loading="lazy"><div><small>'+s.tag+'</small><h3>'+s.title.replace(/^Sample story: (.)/,function(m,c){return c.toUpperCase()})+'</h3></div><em>Sample</em></a>'}).join('');
+  // header + action bar
+  var hd=$('hd'),act=$('act');function sc(){act.classList.toggle('on',scrollY>innerHeight*.8);var h=document.querySelector('.hero').offsetHeight;hd.classList.toggle('dark',scrollY>h-80)}
+  addEventListener('scroll',sc,{passive:true});sc();
+})();
+</script>
+</body>
+</html>
