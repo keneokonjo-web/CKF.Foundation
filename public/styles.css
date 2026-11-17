@@ -24,7 +24,9 @@ h1,h2,h3,h4,p,figure,ul,ol,dl,dd{margin:0}ul,ol{padding:0;list-style:none}
 .hd{position:fixed;left:0;right:0;top:0;height:78px;z-index:60;pointer-events:none;color:var(--mint)}
 .hd>*{pointer-events:auto}
 .brand{position:absolute;left:var(--pad);top:50%;display:flex;align-items:center;gap:12px;text-decoration:none;transform:translateY(-50%);transition:transform .8s var(--ease),opacity .5s}
-.brand .b{width:34px;height:34px;display:block}
+.brand .b{width:58px;height:58px;display:block;flex:none}
+.brand .b img{width:100%;height:100%;display:block}
+.brand{gap:14px}
 .brand b{display:block;font-weight:600;font-size:15px;letter-spacing:.2em;line-height:1}
 .brand small{display:block;font-weight:500;font-size:9.5px;letter-spacing:.34em;margin-top:5px}
 .hd.pilled .brand{transform:translate(-14px,-210%);opacity:0;pointer-events:none}
@@ -168,7 +170,8 @@ h1,h2,h3,h4,p,figure,ul,ol,dl,dd{margin:0}ul,ol{padding:0;list-style:none}
 /* ---------- footer (Canopy) ---------- */
 .ft{background:var(--deep);color:var(--mint);padding:clamp(56px,6vw,96px) var(--pad) 0;overflow:hidden;position:relative}
 .ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;position:relative;z-index:2}
-.ft .brand{position:static;transform:none;color:var(--mint)}
+.ft .brand{position:static;transform:none;color:var(--mint);gap:18px}
+.ft .brand .b{width:96px;height:96px}
 .ft h4{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;opacity:.7;margin:0 0 14px}
 .ft li{margin:7px 0}.ft li a,.ft li{font-size:15px}.ft a{text-decoration:none}.ft a:hover{text-decoration:underline}
 .ft .small{font-size:12.5px;opacity:.72;max-width:46ch;margin-top:18px}
@@ -214,6 +217,7 @@ h1,h2,h3,h4,p,figure,ul,ol,dl,dd{margin:0}ul,ol{padding:0;list-style:none}
   .act span{display:none}.act{width:calc(100vw - 24px)}.act a{flex:1;text-align:center;padding:16px 8px}
 }
 @media (max-width:560px){
+  .hd .brand .b{width:50px;height:50px}
   .mapwrap{padding:14px}.tg{gap:18px 12px}.ft-grid{grid-template-columns:1fr}
   .pill{font-size:14px;padding:8px 8px 8px 12px}.note{width:200px}
   .chips button{padding:9px 14px}
