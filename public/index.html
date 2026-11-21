@@ -17,135 +17,164 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<a class="sr" href="#main">Skip to content</a>
+<a class="sr" href="#main" data-t="skip">Skip to content</a>
 
 <header class="hd" id="hd">
-  <a class="brand" href="#top" aria-label="CKF Foundation, home"><span class="b"><img src="assets/brand/ckf-seal.svg" alt="" width="58" height="58"></span><span><b>CKF</b><small>FOUNDATION</small></span></a>
-  <nav class="nav" aria-label="Primary">
-    <a href="#who">About</a><a href="#pillars">Our work</a><a href="#where">Where we work</a><a href="#board">Trustees</a><a href="#join">Contact</a><a class="give" href="#join" data-interest="Give">Give</a>
+  <a class="brand" href="#top" data-tattr='{"aria-label":"brand.home"}' aria-label="CKF Foundation, home"><span class="b"><img src="assets/brand/ckf-seal.svg" alt="" width="58" height="58"></span><span><b>CKF</b><small>FOUNDATION</small></span></a>
+  <nav class="nav" aria-label="Primary" data-tattr='{"aria-label":"nav.primary"}'>
+    <a href="#who" data-t="nav.about">About</a><a href="#pillars" data-t="nav.work">Our work</a><a href="#where" data-t="nav.where">Where we work</a><a href="#board" data-t="nav.trustees">Trustees</a><a href="#join" data-t="nav.contact">Contact</a><a class="give" href="#join" data-interest="Give" data-t="nav.give">Give</a><button type="button" class="langbtn" data-lang-toggle data-tattr='{"aria-label":"lang.label"}' aria-label="Language"><span class="l-en">EN</span><span class="l-ig">IG</span></button>
   </nav>
   <div class="tools">
-    <span class="lang">EN</span>
-    <a class="give" href="#join" data-interest="Give">Give</a>
-    <button type="button" class="menu" data-menu-open aria-expanded="false" aria-controls="menu"><span>Menu</span><span class="burger"></span></button>
+    <button type="button" class="lang" data-lang-toggle data-tattr='{"aria-label":"lang.label"}' aria-label="Language"><span class="l-en">EN</span><span class="l-sep">/</span><span class="l-ig">IG</span></button>
+    <a class="give" href="#join" data-interest="Give" data-t="nav.give">Give</a>
+    <button type="button" class="menu" data-menu-open aria-expanded="false" aria-controls="menu"><span data-t="nav.menu">Menu</span><span class="burger"></span></button>
   </div>
 </header>
 
-<nav id="menu" aria-hidden="true" aria-label="Full menu">
-  <button class="x" type="button" data-menu-close>Close <span aria-hidden="true">×</span></button>
+<nav id="menu" aria-hidden="true" aria-label="Full menu" data-tattr='{"aria-label":"menu.label"}'>
+  <button class="x" type="button" data-menu-close><span data-t="nav.close">Close</span> <span aria-hidden="true">×</span></button>
   <ol>
-    <li><a href="#who">About</a></li><li><a href="#pillars">Our work</a></li><li><a href="#where">Where we work</a></li><li><a href="#board">Board of Trustees</a></li><li><a href="#join">Give &amp; get involved</a></li>
+    <li><a href="#who" data-t="nav.about">About</a></li><li><a href="#pillars" data-t="nav.work">Our work</a></li><li><a href="#where" data-t="nav.where">Where we work</a></li><li><a href="#board" data-t="menu.board">Board of Trustees</a></li><li><a href="#join" data-t="menu.join">Give &amp; get involved</a></li>
   </ol>
-  <aside><p>Healthy, educated, thriving communities where no one is held back by poverty.</p><a class="btn" href="#join" data-menu-close data-interest="Give">Give now</a></aside>
+  <aside><p data-t="menu.vision">Healthy, educated, thriving communities where no one is held back by poverty.</p><a class="btn" href="#join" data-menu-close data-interest="Give" data-t="menu.give">Give now</a>
+    <p class="menu-mail"><a href="mailto:ckfoundationglobal@gmail.com">ckfoundationglobal@gmail.com</a></p>
+    <button type="button" class="menu-lang" data-lang-toggle data-tattr='{"aria-label":"lang.label"}' aria-label="Language"><span class="l-en">English</span><span class="l-sep">/</span><span class="l-ig">Igbo</span></button></aside>
 </nav>
 
 <main id="main">
 <section class="hero" id="top">
   <div class="wm" aria-hidden="true"><img src="assets/brand/ckf-seal.svg" alt="" width="800" height="800"></div>
-  <h1 aria-label="Education. Health. Opportunity.">
-    <span class="ln"><span>Education.</span></span><span class="ln"><span>Health.</span></span><span class="ln"><span>Opportunity.</span></span>
+  <h1 aria-label="Education. Health. Opportunity." data-tattr='{"aria-label":"hero.aria"}'>
+    <span class="ln"><span data-t="hero.e">Education.</span></span><span class="ln"><span data-t="hero.h">Health.</span></span><span class="ln"><span data-t="hero.o">Opportunity.</span></span>
   </h1>
   <div class="hero-foot">
-    <div class="cue"><i></i>Scroll</div>
-    <p>CKF carries our parents’ legacy forward for the people of Ogwashi-Ukwu and beyond.</p>
-    <a class="feature" href="#who"><img src="assets/img/kids-smiling.jpg" alt="Smiling children (illustrative photograph)" width="214" height="143"><span>Feature<small>Our story</small></span><em aria-hidden="true">→</em></a>
+    <div class="cue"><i></i><span data-t="hero.scroll">Scroll</span></div>
+    <p data-t="hero.p">CKF carries our parents’ legacy forward for the people of Ogwashi-Ukwu and beyond.</p>
+    <a class="feature" href="#who"><img src="assets/img/kids-smiling.jpg" alt="Smiling children (illustrative photograph)" data-tattr='{"alt":"alt.kids"}' width="214" height="143"><span><span data-t="hero.feature">Feature</span><small data-t="hero.story">Our story</small></span><em aria-hidden="true">→</em></a>
   </div>
 </section>
 
-<section class="strip" id="who" aria-label="About CKF">
+<section class="strip" id="who" aria-label="About CKF" data-tattr='{"aria-label":"strip.label"}'>
   <div class="bar"></div>
-  <div class="arr"><button type="button" id="prev" aria-label="Previous statement">‹</button><button type="button" id="next" aria-label="Next statement">›</button></div>
+  <div class="arr"><button type="button" id="prev" aria-label="Previous statement" data-tattr='{"aria-label":"strip.prev"}'>‹</button><button type="button" id="next" aria-label="Next statement" data-tattr='{"aria-label":"strip.next"}'>›</button></div>
   <div class="txt"><small id="sLabel">Mission</small><p id="sText" aria-live="polite"></p></div>
 </section>
 
-<section class="pillars" id="pillars" aria-label="Education, Health, Opportunity">
-  <article class="pil" data-reveal><div class="ph"><img src="assets/img/classroom-kids.jpg" alt="Students in a classroom (illustrative photograph)" loading="lazy"></div><h2>Education</h2><a class="go" href="#where" aria-label="Where we work">&gt;&gt;&gt;</a><p class="l">Every child can get an education.</p>
-    <ul><li>Scholarships and other support for indigent students</li><li>Technology training and other practical skills</li></ul></article>
-  <article class="pil" data-reveal style="--d:120"><div class="ph"><img src="assets/img/nurse-clinic.jpg" alt="A nurse taking a patient's blood pressure (illustrative photograph)" loading="lazy"></div><h2>Health</h2><a class="go" href="#where" aria-label="Where we work">&gt;&gt;&gt;</a><p class="l">Every family can get quality primary care.</p>
-    <ul><li>Access to primary health care</li><li>Community welfare, such as environmental cleanups</li></ul></article>
-  <article class="pil" data-reveal style="--d:240"><div class="ph"><img src="assets/img/man-portrait.jpg" alt="A smiling young man (illustrative photograph)" loading="lazy" style="object-position:50% 20%"></div><h2>Opportunity</h2><a class="go" href="#where" aria-label="Where we work">&gt;&gt;&gt;</a><p class="l">Every young person can build a livelihood.</p>
-    <ul><li>Support to SMEs and other job-creating activities for youth</li><li>Skills that turn learning into work</li></ul></article>
+<section class="pillars" id="pillars" aria-label="Education, Health, Opportunity" data-tattr='{"aria-label":"pillars.label"}'>
+  <article class="pil" data-reveal><div class="ph"><img src="assets/img/classroom-kids.jpg" alt="Students in a classroom (illustrative photograph)" data-tattr='{"alt":"alt.class"}' loading="lazy"></div><h2 data-t="p1.t">Education</h2><a class="go" href="#where" aria-label="Where we work" data-tattr='{"aria-label":"nav.where"}'>&gt;&gt;&gt;</a><p class="l" data-t="p1.l">Every child can get an education.</p>
+    <ul><li data-t="p1.a">Scholarships and other support for indigent students</li><li data-t="p1.b">Technology training and other practical skills</li></ul></article>
+  <article class="pil" data-reveal style="--d:120"><div class="ph"><img src="assets/img/nurse-clinic.jpg" alt="A nurse taking a patient's blood pressure (illustrative photograph)" data-tattr='{"alt":"alt.nurse"}' loading="lazy"></div><h2 data-t="p2.t">Health</h2><a class="go" href="#where" aria-label="Where we work" data-tattr='{"aria-label":"nav.where"}'>&gt;&gt;&gt;</a><p class="l" data-t="p2.l">Every family can get quality primary care.</p>
+    <ul><li data-t="p2.a">Access to primary health care</li><li data-t="p2.b">Community welfare, such as environmental cleanups</li></ul></article>
+  <article class="pil" data-reveal style="--d:240"><div class="ph"><img src="assets/img/man-portrait.jpg" alt="A smiling young man (illustrative photograph)" data-tattr='{"alt":"alt.man"}' loading="lazy" style="object-position:50% 20%"></div><h2 data-t="p3.t">Opportunity</h2><a class="go" href="#where" aria-label="Where we work" data-tattr='{"aria-label":"nav.where"}'>&gt;&gt;&gt;</a><p class="l" data-t="p3.l">Every young person can build a livelihood.</p>
+    <ul><li data-t="p3.a">Support to SMEs and other job-creating activities for youth</li><li data-t="p3.b">Skills that turn learning into work</li></ul></article>
 </section>
 
-<section class="duo" aria-label="Our promise">
+<section class="duo" aria-label="Our promise" data-tattr='{"aria-label":"duo.label"}'>
   <img data-parallax=".1" src="assets/img/volunteers-boxes.jpg" alt="" loading="lazy">
-  <div class="q"><h2 data-reveal>Every child.<br>Every family.<br>Every young <i>person.</i></h2><p data-reveal style="--d:150">A legacy of education, service and community, carried forward for the people of Ogwashi-Ukwu and beyond.</p></div>
+  <div class="q"><h2 data-reveal data-t="duo.h">Every child.<br>Every family.<br>Every young <i>person.</i></h2><p data-reveal style="--d:150" data-t="duo.p">A legacy of education, service and community, carried forward for the people of Ogwashi-Ukwu and beyond.</p></div>
 </section>
 
 <section class="where" id="where">
   <div class="grid">
     <div data-reveal>
-      <span class="eyebrow">Where we work</span>
-      <h2>Ogwashi-Ukwu and beyond</h2>
-      <p>CKF assists less privileged Nigerians, particularly in Ogwashi-Ukwu, Delta State. Our work starts at home and reaches outward to people across Nigeria who are held back by poverty.</p>
+      <span class="eyebrow" data-t="where.eyebrow">Where we work</span>
+      <h2 data-t="where.h">Ogwashi-Ukwu and beyond</h2>
+      <p data-t="where.p">CKF assists less privileged Nigerians, particularly in Ogwashi-Ukwu, Delta State. Our work starts at home and reaches outward to people across Nigeria who are held back by poverty.</p>
       <ul class="obj">
-        <li><b>01</b><span>Access to education through scholarships and other support for indigent students, as well as technology training and other practical skills.</span></li>
-        <li><b>02</b><span>Access to primary health care.</span></li>
-        <li><b>03</b><span>Community welfare, such as environmental cleanups.</span></li>
-        <li><b>04</b><span>Support to SMEs and other job-creating activities for youth.</span></li>
+        <li><b>01</b><span data-t="where.o1">Access to education through scholarships and other support for indigent students, as well as technology training and other practical skills.</span></li>
+        <li><b>02</b><span data-t="where.o2">Access to primary health care.</span></li>
+        <li><b>03</b><span data-t="where.o3">Community welfare, such as environmental cleanups.</span></li>
+        <li><b>04</b><span data-t="where.o4">Support to SMEs and other job-creating activities for youth.</span></li>
       </ul>
     </div>
     <div class="mapwrap" data-reveal style="--d:120">
-      <div class="chips" role="group" aria-label="Map view"><button type="button" data-view="nigeria" aria-pressed="true">Nigeria</button><button type="button" data-view="delta" aria-pressed="false">Delta State</button></div>
+      <div class="chips" role="group" aria-label="Map view" data-tattr='{"aria-label":"map.view"}'><button type="button" data-view="nigeria" aria-pressed="true" data-t="map.ng">Nigeria</button><button type="button" data-view="delta" aria-pressed="false" data-t="map.de">Delta State</button></div>
       <div class="map" id="map" data-view="nigeria">
-        <div class="m n"><img src="assets/map/nigeria-dots.svg" alt="Dotted map of Nigeria with Delta State highlighted in dark green" loading="lazy"></div>
-        <div class="m d"><img src="assets/map/delta-dots.svg" alt="Dotted map of Delta State with the Ogwashi-Ukwu area highlighted" loading="lazy" style="object-fit:contain"></div>
+        <div class="m n"><img src="assets/map/nigeria-dots.svg" alt="Dotted map of Nigeria with Delta State highlighted in dark green" data-tattr='{"alt":"alt.mapng"}' loading="lazy"></div>
+        <div class="m d"><img src="assets/map/delta-dots.svg" alt="Dotted map of Delta State with the Ogwashi-Ukwu area highlighted" data-tattr='{"alt":"alt.mapde"}' loading="lazy" style="object-fit:contain"></div>
         <div class="pin" id="pin" style="left:32.9%;top:80.1%"><span class="dot"></span>
           <button type="button" class="pill" id="pillBtn" aria-expanded="false" aria-controls="pinNote"><span>Ogwashi-Ukwu</span><span class="pl" aria-hidden="true">+</span></button>
-          <div class="note" id="pinNote" role="note">Our home community in Delta State, Nigeria.</div>
+          <div class="note" id="pinNote" role="note" data-t="map.note">Our home community in Delta State, Nigeria.</div>
         </div>
       </div>
-      <div class="legend"><span><i style="background:#2F4B2A"></i>Delta State</span><span><i style="background:#8FB07A"></i>Neighbouring states</span><span><i style="background:#D6E5CB"></i>Rest of Nigeria</span></div>
+      <div class="legend"><span><i style="background:#2F4B2A"></i><em data-t="map.de">Delta State</em></span><span><i style="background:#8FB07A"></i><em data-t="map.nb">Neighbouring states</em></span><span><i style="background:#D6E5CB"></i><em data-t="map.rest">Rest of Nigeria</em></span></div>
     </div>
   </div>
 </section>
 
 <section class="board" id="board" aria-labelledby="bt">
-  <div class="head"><div data-reveal><span class="eyebrow">Governance</span><h2 id="bt">Board of Trustees</h2></div><p data-reveal style="--d:120">The people who guide the Foundation and carry the legacy of Obi (Prof.) Chukuka Okonjo and Prof. Kamene Okonjo.</p></div>
+  <div class="head"><div data-reveal><span class="eyebrow" data-t="board.eyebrow">Governance</span><h2 id="bt" data-t="board.h">Board of Trustees</h2></div><p data-reveal style="--d:120" data-t="board.p">The people who guide the Foundation and carry the legacy of Obi (Prof.) Chukuka Okonjo and Prof. Kamene Okonjo.</p></div>
   <div class="tg">
-    <article class="t" data-reveal><div class="ph"><img src="assets/trustees/ngozi-okonjo-iweala.jpg" alt="Dr. Ngozi Okonjo-Iweala" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="ini" aria-hidden="true">NO</span></div><h3>Dr. Ngozi Okonjo-Iweala</h3><span class="role">Chair</span></article>
-    <article class="t" data-reveal style="--d:100"><div class="ph"><img src="assets/trustees/ifechukwude-anishi-okonjo-ii.jpg" alt="Obi Dr. Ifechukwude Anishi Okonjo II" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="ini" aria-hidden="true">IO</span></div><h3>Obi Dr. Ifechukwude Anishi Okonjo II</h3><p>Trustee</p></article>
-    <article class="t" data-reveal style="--d:200"><div class="ph"><img src="assets/trustees/njideka-okonjo-udochi.jpg" alt="Dr. Njideka Okonjo-Udochi" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="ini" aria-hidden="true">NU</span></div><h3>Dr. Njideka Okonjo-Udochi</h3><p>Trustee</p></article>
-    <article class="t" data-reveal style="--d:300"><div class="ph"><img src="assets/trustees/onyema-okonjo.jpg" alt="Prince Onyema Okonjo" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="ini" aria-hidden="true">OO</span></div><h3>Prince Onyema Okonjo</h3><p>Trustee</p></article>
+    <article class="t" data-reveal><div class="ph"><img src="assets/trustees/ngozi-okonjo-iweala.jpg" alt="Dr. Ngozi Okonjo-Iweala" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="ini" aria-hidden="true">NO</span></div><h3>Dr. Ngozi Okonjo-Iweala</h3><span class="role" data-t="role.chair">Chair</span></article>
+    <article class="t" data-reveal style="--d:100"><div class="ph"><img src="assets/trustees/ifechukwude-anishi-okonjo-ii.jpg" alt="Obi Dr. Ifechukwude Anishi Okonjo II" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="ini" aria-hidden="true">IO</span></div><h3>Obi Dr. Ifechukwude Anishi Okonjo II</h3><p data-t="role.trustee">Trustee</p></article>
+    <article class="t" data-reveal style="--d:200"><div class="ph"><img src="assets/trustees/njideka-okonjo-udochi.jpg" alt="Dr. Njideka Okonjo-Udochi" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="ini" aria-hidden="true">NU</span></div><h3>Dr. Njideka Okonjo-Udochi</h3><p data-t="role.trustee">Trustee</p></article>
+    <article class="t" data-reveal style="--d:300"><div class="ph"><img src="assets/trustees/onyema-okonjo.jpg" alt="Prince Onyema Okonjo" loading="lazy" onerror="this.parentNode.classList.add('noimg');this.remove()"><span class="ini" aria-hidden="true">OO</span></div><h3>Prince Onyema Okonjo</h3><p data-t="role.trustee">Trustee</p></article>
   </div>
 </section>
 
 <section class="join" id="join">
-  <div><h2 data-reveal>Help it <span class="hl">live</span> on</h2><p class="sub" data-reveal style="--d:120">Give, volunteer or partner with us. Tell us how you would like to help and we will be in touch.</p></div>
+  <div><h2 data-reveal data-t="join.h">Help it <span class="hl">live</span> on</h2><p class="sub" data-reveal style="--d:120" data-t="join.sub">Give, volunteer or partner with us. Tell us how you would like to help and we will be in touch.</p></div>
   <form class="form" id="form" novalidate>
-    <h3>Be part of the legacy</h3><p>Fill in the form and a member of the CKF team will get back to you.</p>
-    <label class="f" for="fn">Full name</label><input id="fn" name="name" type="text" autocomplete="name" required maxlength="120">
-    <label class="f" for="fe">Email address</label><input id="fe" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160">
-    <label class="f" for="fp">Phone (optional)</label><input id="fp" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40">
-    <fieldset><legend>I would like to</legend><div class="opts" id="opts">
-      <label class="opt"><input type="checkbox" name="interest" value="Give"><span>Give</span></label>
-      <label class="opt"><input type="checkbox" name="interest" value="Volunteer"><span>Volunteer</span></label>
-      <label class="opt"><input type="checkbox" name="interest" value="Partner"><span>Partner</span></label>
-      <label class="opt"><input type="checkbox" name="interest" value="Scholarship information"><span>Scholarship information</span></label>
-      <label class="opt"><input type="checkbox" name="interest" value="Receive updates"><span>Receive updates</span></label>
+    <h3 data-t="form.title">Be part of the legacy</h3><p data-t="form.p">Fill in the form and a member of the CKF team will get back to you.</p>
+    <label class="f" for="fn" data-t="f.name">Full name</label><input id="fn" name="name" type="text" autocomplete="name" required maxlength="120">
+    <label class="f" for="fe" data-t="f.email">Email address</label><input id="fe" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160">
+    <label class="f" for="fp" data-t="f.phone">Phone (optional)</label><input id="fp" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40">
+    <fieldset><legend data-t="f.iwould">I would like to</legend><div class="opts" id="opts">
+      <label class="opt"><input type="checkbox" name="interest" value="Give"><span data-t="opt.give">Give</span></label>
+      <label class="opt"><input type="checkbox" name="interest" value="Volunteer"><span data-t="opt.volunteer">Volunteer</span></label>
+      <label class="opt"><input type="checkbox" name="interest" value="Partner"><span data-t="opt.partner">Partner</span></label>
     </div></fieldset>
-    <label class="f" for="fm">Message (optional)</label><textarea id="fm" name="message" maxlength="2000"></textarea>
+    <label class="f" for="fm" data-t="f.msg">Message (optional)</label><textarea id="fm" name="message" maxlength="2000"></textarea>
     <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
-    <button class="submit" type="submit">Send</button>
+    <button class="submit" type="submit" data-t="f.send">Send</button>
     <p class="status" id="status" role="status" aria-live="polite"></p>
-    <p class="fine">By sending this form you agree that CKF may contact you about your enquiry.</p>
+    <p class="fine"><span data-t="form.fine">By sending this form you agree that CKF may contact you about your enquiry.</span> <span data-t="form.mail">Or email us at</span> <a href="mailto:ckfoundationglobal@gmail.com">ckfoundationglobal@gmail.com</a></p>
   </form>
 </section>
 </main>
 
 <footer class="ft">
   <div class="ft-grid">
-    <div><a class="brand" href="#top"><span class="b"><img src="assets/brand/ckf-seal.svg" alt="" width="96" height="96"></span><span><b>CKF</b><small>FOUNDATION</small></span></a><p class="small">The Obi (Prof.) Chukuka Okonjo and Prof. Kamene Okonjo Foundation.<br>Education. Health. Opportunity. A legacy that lives on.</p></div>
-    <div><h4>Explore</h4><ul><li><a href="#who">About</a></li><li><a href="#pillars">Our work</a></li><li><a href="#where">Where we work</a></li><li><a href="#board">Board of Trustees</a></li></ul></div>
-    <div><h4>Get involved</h4><ul><li><a href="#join" data-interest="Give">Give</a></li><li><a href="#join" data-interest="Volunteer">Volunteer</a></li><li><a href="#join" data-interest="Partner">Partner</a></li></ul></div>
-    <div><h4>Contact</h4><ul><li>Ogwashi-Ukwu, Delta State</li><li>Nigeria</li><li><a href="#join">Send us a message</a></li></ul></div>
+    <div><a class="brand" href="#top"><span class="b"><img src="assets/brand/ckf-seal.svg" alt="" width="96" height="96"></span><span><b>CKF</b><small>FOUNDATION</small></span></a><p class="small" data-t="ft.small">The Obi (Prof.) Chukuka Okonjo and Prof. Kamene Okonjo Foundation.<br>Education. Health. Opportunity. A legacy that lives on.</p></div>
+    <div><h4 data-t="ft.explore">Explore</h4><ul><li><a href="#who" data-t="nav.about">About</a></li><li><a href="#pillars" data-t="nav.work">Our work</a></li><li><a href="#where" data-t="nav.where">Where we work</a></li><li><a href="#board" data-t="menu.board">Board of Trustees</a></li></ul></div>
+    <div><h4 data-t="ft.get">Get involved</h4><ul><li><a href="#join" data-interest="Give" data-t="opt.give">Give</a></li><li><a href="#join" data-interest="Volunteer" data-t="opt.volunteer">Volunteer</a></li><li><a href="#join" data-interest="Partner" data-t="opt.partner">Partner</a></li></ul></div>
+    <div><h4 data-t="ft.contact">Contact</h4><ul><li><a href="mailto:ckfoundationglobal@gmail.com">ckfoundationglobal@gmail.com</a></li><li data-t="ft.addr1">Ogwashi-Ukwu, Delta State</li><li data-t="ft.addr2">Nigeria</li><li><a href="#join" data-t="ft.msg">Send us a message</a></li></ul></div>
   </div>
   <span class="giant" aria-hidden="true"><img src="assets/brand/ckf-seal.svg" alt="" width="620" height="620"></span>
-  <div class="base"><span>© CKF Foundation. Registered details to be added.</span><span>Photo of Dr. Ngozi Okonjo-Iweala: World Trade Organization, <a href="https://commons.wikimedia.org/wiki/File:Ngozi_Okonjo-Iweala_takes_over_as_new_WTO_Director-General,_1_March_2021_(50993534756)_(cropped).jpg" rel="noopener">Wikimedia Commons</a>, CC BY-SA 2.0. Other photographs are illustrative stock images (Unsplash). Map data: GADM.</span></div>
+  <div class="base"><span data-t="ft.base1">© CKF Foundation. Registered details to be added.</span><span data-t="ft.base2">Photo of Dr. Ngozi Okonjo-Iweala: World Trade Organization, <a href="https://commons.wikimedia.org/wiki/File:Ngozi_Okonjo-Iweala_takes_over_as_new_WTO_Director-General,_1_March_2021_(50993534756)_(cropped).jpg" rel="noopener">Wikimedia Commons</a>, CC BY-SA 2.0. Other photographs are illustrative stock images (Unsplash). Map data: GADM.</span></div>
 </footer>
 
-<div class="act" id="act" role="region" aria-label="Take action"><span>Take action</span><a class="c" href="#join" data-interest="Give">Give</a><a href="#join" data-interest="Volunteer">Volunteer</a><a href="#join" data-interest="Partner">Partner</a></div>
+<div class="act" id="act" role="region" aria-label="Take action" data-tattr='{"aria-label":"act.label"}'><span data-t="act.label">Take action</span><a class="c" href="#join" data-interest="Give" data-t="opt.give">Give</a><a href="#join" data-interest="Volunteer" data-t="opt.volunteer">Volunteer</a><a href="#join" data-interest="Partner" data-t="opt.partner">Partner</a></div>
 
+<!-- Cookie notice: appears a few seconds after arrival, once. -->
+<aside class="cookie" id="cookie" role="dialog" aria-modal="false" aria-labelledby="ckT" aria-describedby="ckP" hidden>
+  <h2 id="ckT" data-t="ck.title">Cookies</h2>
+  <p id="ckP" data-t="ck.p">We use a few essential cookies to make this site work. With your OK, we also use cookies to understand how people use the site so we can improve it.</p>
+  <details><summary data-t="ck.learn">What does this mean?</summary><p data-t="ck.more">Necessary: remembers your language and this choice. Optional: anonymous statistics about visits. We never sell your data.</p></details>
+  <div class="ck-act"><button type="button" class="ck-no" id="ckNo" data-t="ck.no">Only necessary</button><button type="button" class="ck-yes" id="ckYes" data-t="ck.yes">Accept</button></div>
+</aside>
+
+<!-- Newsletter pop-up: about 10 seconds after arrival, once. -->
+<div class="nl" id="nl" hidden>
+  <div class="nl-back" data-nl-close></div>
+  <div class="nl-card" role="dialog" aria-modal="true" aria-labelledby="nlT" tabindex="-1">
+    <button class="nl-x" type="button" data-nl-close aria-label="Close" data-tattr='{"aria-label":"nav.close"}'>×</button>
+    <img class="nl-seal" src="assets/brand/ckf-seal.svg" alt="" width="64" height="64">
+    <span class="eyebrow" data-t="nl.eyebrow">Newsletter</span>
+    <h2 id="nlT" data-t="nl.title">Join our newsletter</h2>
+    <p data-t="nl.p">Get updates about our work in Ogwashi-Ukwu and beyond, and how you can help.</p>
+    <form id="nlForm" novalidate>
+      <label class="sr" for="nlName" data-t="nl.name">Your name (optional)</label><input id="nlName" name="name" type="text" autocomplete="name" maxlength="120" placeholder="Your name (optional)" data-tattr='{"placeholder":"nl.name"}'>
+      <label class="sr" for="nlEmail" data-t="f.email">Email address</label><input id="nlEmail" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="160" placeholder="Email address" data-tattr='{"placeholder":"f.email"}'>
+      <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+      <button class="submit" type="submit" data-t="nl.btn">Subscribe</button>
+      <p class="status" id="nlStatus" role="status" aria-live="polite"></p>
+    </form>
+    <button class="nl-skip" type="button" data-nl-close data-t="nl.no">No thanks</button>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
 <script src="main.js"></script>
 </body>
 </html>
